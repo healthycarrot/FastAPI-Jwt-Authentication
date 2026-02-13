@@ -58,6 +58,7 @@ def register(
     user = User(
         username=data.username,
         hashed_password=hash_password(data.password),  # hash password before saving
+    
         role=data.role
     )
 

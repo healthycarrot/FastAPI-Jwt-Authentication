@@ -34,6 +34,8 @@ def add_department(
     db: Session = Depends(get_db),
     user: dict = Depends(admin_only)
 ):
+    print(name)
+    print(type(name))
     """
     Creates a new department.
     Only admin users are allowed to access this API.

@@ -30,13 +30,15 @@ useEffect(() => {
 // Function to add a new employee
 function addEmployee() {
   // Send POST request to backend to create a new employee
-  api.post("/employees", {
+  api.post("/employees", null, { params:{
     // Employee name from input field
-    name,
+    name:name,
+    department_id: Number(departmentId)
+  }
 
     // Convert departmentId (string from dropdown) into number
     // Backend usually expects numeric IDs
-    department_id: Number(departmentId)
+    // department_id: Number(departmentId)
   })
   .then(() => {
     // Clear input fields after successful creation

@@ -21,8 +21,11 @@ useEffect(() => {
 // Function to add a new department
 function addDepartment() {
   // Send POST request to backend with new department name
-  api.post("/departments", { name })
-    .then(() => {
+  axios.post(
+    "/departments",
+    null,                     // ← body が無い場合は null
+    { params: { name: name } }
+  ).then(() => {
       // Clear the input field after successful creation
       setName("");
 
